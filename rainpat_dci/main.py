@@ -91,4 +91,7 @@ def main(user_n, pass_w):
 
 if __name__ == '__main__':
     rainpat_info = sys.argv[2].split('\n')
+    print(rainpat_info)
+    for i in range(len(sys.argv)):
+        print(i, sys.argv[i])
     main(rainpat_info[0], rainpat_info[1])
