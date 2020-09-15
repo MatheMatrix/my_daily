@@ -89,6 +89,6 @@ def main(user_n, pass_w):
 
 
 if __name__ == '__main__' and len(sys.argv) > 4:
-    for i in range(4,len(sys.argv):
+    for i in range(4,len(sys.argv)):
         if i%2 = 0:
             main(sys.argv[i], sys.argv[i+1])
