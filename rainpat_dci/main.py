@@ -19,11 +19,10 @@ def BD_img_to_str(image):
     image.save(imgByteArr, format='PNG')  # format: PNG / JPEG
     imgByteArr = imgByteArr.getvalue()
 
-    bd_cf = sys.argv[1].split('\n')
     config = {
-        'appId': bd_cf[0],
-        'apiKey': bd_cf[1],
-        'secretKey': bd_cf[2]
+        'appId': sys.argv[1],
+        'apiKey': sys.argv[2],
+        'secretKey': sys.argv[3]
     }
     client = AipOcr(**config)
     result = client.basicGeneral(imgByteArr)
@@ -90,8 +89,4 @@ def main(user_n, pass_w):
 
 
 if __name__ == '__main__':
-    rainpat_info = sys.argv[2].split('\n')
-    print(rainpat_info)
-    for i in range(len(sys.argv)):
-        print(i, sys.argv[i])
-    main(rainpat_info[0], rainpat_info[1])
+    main(sys.argv[4], sys.argv[5])
