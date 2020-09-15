@@ -22,6 +22,6 @@ jobs:
       - name: 'Working'
         env:
           BAIDUOCR_CONFIG: ${{ secrets.BAIDUOCR_CONFIG }}
-          RAINPAT_INFO:: ${{ secrets.RAINPAT_INFO }}
+          RAINPAT_INFO: ${{ secrets.RAINPAT_INFO }}
         run: python rainpat_dci/main.py $BAIDUOCR_CONFIG $RAINPAT_INFO
      
