@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.7
       - name: 'Install requirements'
-        run: pip install -r ./csdn-spider/requirements.txt
+        run: pip install -r ./rainpat_dci/requirements.txt
       - name: 'Working'
         env:
           BAIDUOCR_CONFIG: ${{ secrets.BAIDUOCR_CONFIG }}
