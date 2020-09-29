@@ -86,9 +86,13 @@ def main(user_n, pass_w):
     resp = requests.post('https://www.rainpat.com/User/EverydaySignin', headers=headers, cookies=cookie_dict)
     s_info = eval(resp.text)
     print(s_info['err'])
+    return(s_info['err'])
 
 
 if __name__ == '__main__' and len(sys.argv) > 4:
     for i in range(4,len(sys.argv)):
         if i%2 == 0:
-            main(sys.argv[i], sys.argv[i+1])
+            while 1:
+                isC = main(sys.argv[i], sys.argv[i+1])
+                if '超时' not in isC:
+                    break
