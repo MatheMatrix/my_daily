@@ -1,5 +1,6 @@
 import requests
-import sys
+import sys,os
+
 from PIL import Image
 # pillow
 from io import BytesIO
