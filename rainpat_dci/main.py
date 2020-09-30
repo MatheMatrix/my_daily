@@ -1,5 +1,5 @@
 import requests
-import sys,os
+import os
 
 from PIL import Image
 # pillow
