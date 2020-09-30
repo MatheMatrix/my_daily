@@ -19,11 +19,13 @@ def BD_img_to_str(image):
     imgByteArr = BytesIO()
     image.save(imgByteArr, format='PNG')  # format: PNG / JPEG
     imgByteArr = imgByteArr.getvalue()
-
+    
+    baidu_ocr_info = os.getenv('BAIDUOCR_CONFIG').strip().split()
+    
     config = {
-        'appId': sys.argv[1],
-        'apiKey': sys.argv[2],
-        'secretKey': sys.argv[3]
+        'appId': baidu_ocr_info[0],
+        'apiKey': baidu_ocr_info[1],
+        'secretKey': baidu_ocr_info[2]
     }
     client = AipOcr(**config)
     result = client.basicGeneral(imgByteArr)
@@ -90,13 +92,12 @@ def main(user_n, pass_w):
     return(s_info['err'])
 
 
-if __name__ == '__main__' and len(sys.argv) > 4:
-    print(os.getenv('RAINPAT_INFO'))
-    
-    
-    for i in range(4,len(sys.argv)):
+if __name__ == '__main__':
+    rainpat_info = os.getenv('RAINPAT_INFO').strip().split()
+        
+    for i in range(len(rainpat_info)):
         if i%2 == 0:
             while 1:
-                isC = main(sys.argv[i], sys.argv[i+1])
+                isC = main(rainpat_info[i], rainpat_info[i+1])
                 if '超时' not in isC:
                     break
