@@ -90,6 +90,9 @@ def main(user_n, pass_w):
 
 
 if __name__ == '__main__' and len(sys.argv) > 4:
+    print(os.getenv('RAINPAT_INFO'))
+    
+    
     for i in range(4,len(sys.argv)):
         if i%2 == 0:
             while 1:
