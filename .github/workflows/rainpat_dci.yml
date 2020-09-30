@@ -20,8 +20,5 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./rainpat_dci/requirements.txt
       - name: 'Working'
-        env:
-          BAIDUOCR_CONFIG: ${{ secrets.BAIDUOCR_CONFIG }}
-          RAINPAT_INFO: ${{ secrets.RAINPAT_INFO }}
-        run: python rainpat_dci/main.py $BAIDUOCR_CONFIG $RAINPAT_INFO
+        run: python rainpat_dci/main.py
      
