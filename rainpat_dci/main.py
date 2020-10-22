@@ -94,10 +94,14 @@ def main(user_n, pass_w):
 
 if __name__ == '__main__':
     rainpat_info = os.getenv('RAINPAT_INFO').strip().split()
-        
+    rept = 0
     for i in range(len(rainpat_info)):
         if i%2 == 0:
             while 1:
                 isC = main(rainpat_info[i], rainpat_info[i+1])
                 if '超时' not in isC:
                     break
+                else:
+                    rept += 1
+                if rept == 3:
+                    raise
