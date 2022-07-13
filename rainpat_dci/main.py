@@ -46,6 +46,7 @@ def rainpat_logn_in(user_n, pass_w):
 
     image = image.convert('L')
     out = image.resize((60 * 5, 20 * 5), Image.ANTIALIAS)
+    print(out)
 
     threshold = 80
 
@@ -57,7 +58,7 @@ def rainpat_logn_in(user_n, pass_w):
                 im.putpixel((i, j), (255, 255, 255))
             else:
                 im.putpixel((i, j), (0, 0, 0))
-    # im.show()
+    im.show()
     itt = BD_img_to_str(im)
     yzm = ''
     for i in itt:
