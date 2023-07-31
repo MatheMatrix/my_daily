@@ -15,6 +15,7 @@ headers = {
 
 
 def BD_img_to_str(image):
+    print("image: " + str(image))
     # Image对象变成字节流对象
     imgByteArr = BytesIO()
     image.save(imgByteArr, format='PNG')  # format: PNG / JPEG
@@ -22,13 +23,16 @@ def BD_img_to_str(image):
     
     baidu_ocr_info = os.getenv('BAIDUOCR_CONFIG').strip().split()
     
+    
     config = {
         'appId': baidu_ocr_info[0],
         'apiKey': baidu_ocr_info[1],
         'secretKey': baidu_ocr_info[2]
     }
+    print("config %s" % config)
     client = AipOcr(**config)
     result = client.basicGeneral(imgByteArr)
+    print("res: %s" %result)
 
     if 'words_result' in result:
         return '\n'.join([w['words'] for w in result['words_result']])
@@ -60,6 +64,7 @@ def rainpat_logn_in(user_n, pass_w):
                 im.putpixel((i, j), (0, 0, 0))
     im.show()
     itt = BD_img_to_str(im)
+    print("itt: " + str(itt))
     yzm = ''
     for i in itt:
         if i.isdigit():
