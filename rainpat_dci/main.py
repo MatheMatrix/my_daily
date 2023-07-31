@@ -45,7 +45,7 @@ def rainpat_logn_in(user_n, pass_w):
     image = Image.open(BytesIO(re_yzm.content))
 
     image = image.convert('L')
-    out = image.resize((60 * 5, 20 * 5), Image.ANTIALIAS)
+    out = image.resize((60 * 5, 20 * 5), Image.Resampling.LANCZOS)
     print(out)
 
     threshold = 80
