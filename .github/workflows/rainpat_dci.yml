@@ -1,6 +1,8 @@
 name: 'GitHub Actions rainpat daily check in'
 
 on:
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches: 
       - main
