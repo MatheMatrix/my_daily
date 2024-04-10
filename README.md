@@ -8,7 +8,8 @@
   
 ### 注册 baidu-OCR 接口  
 1. 登录 https://login.bce.baidu.com/  
-产品服务 → 人工智能 → 文字识别  
+产品服务 → 人工智能 → 文字识别
+
   
 [![wyFR3j.png](https://s1.ax1x.com/2020/09/15/wyFR3j.png)](https://imgchr.com/i/wyFR3j)  
 ___
