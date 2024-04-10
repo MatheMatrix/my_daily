@@ -26,7 +26,6 @@ ___
 回到 GitHub 该项目中 settings → secrets 中创建名为 ‘**BAIDUOCR_CONFIG**’ 的条目，依次填写百度OCR API 的信息。  
   
 [![wyF2CQ.png](https://s1.ax1x.com/2020/09/15/wyF2CQ.png)](https://imgchr.com/i/wyF2CQ)  
-  
 
 
 ## RAINPAT
